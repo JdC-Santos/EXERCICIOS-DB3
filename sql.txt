@@ -1,0 +1,21 @@
+1- Todos os registros da tabela cliente
+2- Todos os clientes que possuam a letra "n" em algum lugar do nome
+3- Todos os lanches terminados com a letra "e"
+4- Todas as bebidas que custem menos de 7,00
+5- Todas as bebidas que custem mais de 5,00 e menos de 10,00
+6- Todos os lanches que custem menos de 10,00
+7- Todos os clientes que tenham a letra "a" no nome e cujo a data de nascimento seja superior a 01/01/2000
+8- Todos os lanches com batatas como acompanhamento e que possuam a frango em sua descrição.
+9- Todos os lanches com queijo na descrição e cujo preço custe entre 12,00 e 16,00
+10- Todas as bebidas cujo a letra inicial seja "S" e cujo o valor seja inferior a 6,00
+11- Todos os clientes cujo a letra inicial seja "A" e a letra final do nome seja "O"
+12- Todos os lanches cujo a letra inicial seja "S", possuam frango na descrição e cujo preço seja maior que 12,00
+13- Todas as bebidas que possuam a letra "o" no nome e cujo preço seja superior a 5,00 e inferior a 10,00
+14- Todos os lanches cujo o valor seja maior que 6,00 e inferior a 12,00 e cujo a descrição possua a palavra "tomate"
+15- Todas as bebidas cujo preço seja inferior a 5,50
+
+16- Liste todos os clientes em ordem alfabetica.
+17- Liste todos os lanches que possuam queijo em ordem decrescente de valor.
+18- Liste todas as bebidas que custem mais de 6,50 em ordem alfabetica.
+19- Liste todos os clientes cujo o nome comece com a letra "D".
+20- Liste todos os lanches em ordem alfabética.

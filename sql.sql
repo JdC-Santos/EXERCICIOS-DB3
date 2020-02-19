@@ -27,8 +27,7 @@ CREATE TABLE IF NOT EXISTS `lanchesETEC`.`lanche` (
   `ds_acompanhamento` VARCHAR(255) NULL,
   `vl_lanche` DOUBLE(5,2) NOT NULL,
   PRIMARY KEY (`cd_lanche`),
-  UNIQUE INDEX `cd_lanche_UNIQUE` (`cd_lanche` ASC) ,
-  UNIQUE INDEX `nm_lanche_UNIQUE` (`nm_lanche` ASC) )
+  UNIQUE INDEX `cd_lanche_UNIQUE` (`cd_lanche` ASC))
 ENGINE = InnoDB;
 
 
@@ -54,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `lanchesETEC`.`pedido` (
   `cd_pedido` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `cd_cliente` INT UNSIGNED NOT NULL,
   `ds_observacao` VARCHAR(45) NULL,
-  `dt_pedido` DATETIME NOT NULL,
+  `dt_pedido` DATE NOT NULL,
   PRIMARY KEY (`cd_pedido`),
   UNIQUE INDEX `cd_pedido_UNIQUE` (`cd_pedido` ASC) ,
   INDEX `fk_pedido_cliente_idx` (`cd_cliente` ASC) ,
@@ -132,3 +131,117 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Inserindo dados na tabela LANCHE
+-- -----------------------------------------------------
+INSERT INTO lanche (cd_lanche, nm_lanche, ds_lanche,ds_acompanhamento,vl_lanche) 
+VALUES (null,'Misto Quente','Lanche com pão, queijo e presunto','Nenhum',5.00);
+
+INSERT INTO lanche (cd_lanche, nm_lanche, ds_lanche,ds_acompanhamento,vl_lanche) 
+VALUES (null,'Misto quente','Lanche com três tipos de queijo derretidos','Nenhum',6.50);
+
+INSERT INTO lanche (cd_lanche, nm_lanche, ds_lanche,ds_acompanhamento,vl_lanche) 
+VALUES (null,'Hambúrguer simples','Pão, hambúrguer, alface e tomate','Batatas',7.00);
+
+INSERT INTO lanche (cd_lanche, nm_lanche, ds_lanche,ds_acompanhamento,vl_lanche) 
+VALUES (null,'Hambúrguer de queijo','Pão, hambúrguer, queijo, alface e tomate','Batatas',8.00);
+
+INSERT INTO lanche (cd_lanche, nm_lanche, ds_lanche,ds_acompanhamento,vl_lanche) 
+VALUES (null,'Hambúrguer duplo','Pão, dois hambúrgueres, queijo, alface e tomate','Batatas',10.00);
+
+INSERT INTO lanche (cd_lanche, nm_lanche, ds_lanche,ds_acompanhamento,vl_lanche) 
+VALUES (null,'Hambúrguer duplo com cheddar','Pão, dois hambúrgueres, cheddar, alface e tomate','Batatas',10.00);
+
+INSERT INTO lanche (cd_lanche, nm_lanche, ds_lanche,ds_acompanhamento,vl_lanche) 
+VALUES (null,'Vegano','Pão, hambúrguer de soja, alface e tomate','Batatas',12.00);
+
+INSERT INTO lanche (cd_lanche, nm_lanche, ds_lanche,ds_acompanhamento,vl_lanche) 
+VALUES (null,'Super de frango','Pão, steak de frango, queijo alface e tomate','Batatas',12.00);
+
+INSERT INTO lanche (cd_lanche, nm_lanche, ds_lanche,ds_acompanhamento,vl_lanche) 
+VALUES (null,'Especial do Boça','Pão, três hambúrgueres e tudo que há de “bom”','Batatas e outras coisas',15.00);
+
+INSERT INTO lanche (cd_lanche, nm_lanche, ds_lanche,ds_acompanhamento,vl_lanche) 
+VALUES (null,'Especial da casa','Pão, três hambúrgueres, queijo, alface e tomate','Batatas',16.00);
+    
+-- -----------------------------------------------------
+-- Inserindo dados na tabela BEBIDA
+-- -----------------------------------------------------
+
+INSERT INTO bebida (cd_bebida, nm_bebida, ds_bebida,ds_tipo,vl_bebida) 
+VALUES (null,'Suco Del Valle','Suco de caixinha','Não alcoólica',4.00);
+
+INSERT INTO bebida (cd_bebida, nm_bebida, ds_bebida,ds_tipo,vl_bebida) 
+VALUES (null,'Suco natural','Suco feito na hora','Não alcoólica',5.00);
+
+INSERT INTO bebida (cd_bebida, nm_bebida, ds_bebida,ds_tipo,vl_bebida) 
+VALUES (null,'Refrigerante lata','Refrigerante 350ml','Não alcoólica',5.00);
+
+INSERT INTO bebida (cd_bebida, nm_bebida, ds_bebida,ds_tipo,vl_bebida) 
+VALUES (null,'Refrigerante garrafa','Refrigerante 600ml','Não alcoólica',7.50);
+
+INSERT INTO bebida (cd_bebida, nm_bebida, ds_bebida,ds_tipo,vl_bebida) 
+VALUES (null,'Refrigerante garrafa','Refrigerante 600ml','Não alcoólica',7.50);
+
+INSERT INTO bebida (cd_bebida, nm_bebida, ds_bebida,ds_tipo,vl_bebida) 
+VALUES (null,'Cerveja','Cerveja estupidamente gelada','Alcoólica',9.00);
+
+-- -----------------------------------------------------
+-- Inserindo dados na tabela CLIENTE
+-- -----------------------------------------------------
+INSERT INTO cliente (cd_cliente, cd_cpf, nm_cliente,dt_nascimento,ds_endereco) 
+VALUES (null,'110.110.100-10','Maria Silva','2000-02-15','Rua Falsa, 200');
+
+INSERT INTO cliente (cd_cliente, cd_cpf, nm_cliente,dt_nascimento,ds_endereco) 
+VALUES (null,'210.210.200-20','Jeremias Alberto','1980-09-20','Rua Não Existe, 330');
+
+INSERT INTO cliente (cd_cliente, cd_cpf, nm_cliente,dt_nascimento,ds_endereco) 
+VALUES (null,'310.310.300-30','Claudio Dolly','1984-05-10','Rua Amiguinho, 220');
+
+INSERT INTO cliente (cd_cliente, cd_cpf, nm_cliente,dt_nascimento,ds_endereco) 
+VALUES (null,'410.410.400-40','Wellington Orelhana','1900-05-04','Rua Forró, 120');
+
+INSERT INTO cliente (cd_cliente, cd_cpf, nm_cliente,dt_nascimento,ds_endereco) 
+VALUES (null,'510.510.500-50','João da Couve','2001-10-02','Rua Falsa, 500');
+
+-- -----------------------------------------------------
+-- Inserindo dados na tabela PEDIDO
+-- -----------------------------------------------------
+INSERT INTO `pedido`(`cd_pedido`, `cd_cliente`, `ds_observacao`, `dt_pedido`) VALUES (null,1,"",'2019-04-01');
+	INSERT INTO `pedido_lanche`(`cd_pedido_lanche`, `cd_lanche`, `cd_pedido`, `qt_lanches`) VALUES (null,1,1,1);
+	INSERT INTO `pedido_bebida` ( `cd_pedido_bebida` , `cd_pedido` , `cd_bebida` , `qt_bebida` ) VALUES (NULL , 1, 1, 1);
+
+INSERT INTO `pedido`(`cd_pedido`, `cd_cliente`, `ds_observacao`, `dt_pedido`) VALUES (null,2,"",'2019-04-01');
+	INSERT INTO `pedido_bebida`(`cd_pedido_bebida`, `cd_pedido`, `cd_bebida`, `qt_bebida`) VALUES (null,2,2,2);
+    
+INSERT INTO `pedido`(`cd_pedido`, `cd_cliente`, `ds_observacao`, `dt_pedido`) VALUES (null,2,"",'2019-04-03');
+	INSERT INTO `pedido_lanche`(`cd_pedido_lanche`, `cd_lanche`, `cd_pedido`, `qt_lanches`) VALUES (null,10,3,1);
+    INSERT INTO `pedido_bebida`(`cd_pedido_bebida`, `cd_pedido`, `cd_bebida`, `qt_bebida`) VALUES (null,3,6,1);  
+
+INSERT INTO `pedido`(`cd_pedido`, `cd_cliente`, `ds_observacao`, `dt_pedido`) VALUES (null,4,"",'2019-04-03');
+	INSERT INTO `pedido_bebida`(`cd_pedido_bebida`, `cd_pedido`, `cd_bebida`, `qt_bebida`) VALUES (null,4,6,2);
+    INSERT INTO `pedido_lanche`(`cd_pedido_lanche`, `cd_lanche`, `cd_pedido`, `qt_lanches`) VALUES (null,9,4,2);
+
+SELECT * FROM pedido;
+
+SELECT * FROM cliente;
+SELECT * FROM cliente WHERE nm_cliente LIKE "%n%";
+SELECT * FROM lanche WHERE nm_lanche LIKE "%e";
+SELECT * FROM bebida WHERE vl_bebida < 7.00;
+SELECT * FROM bebida WHERE vl_bebida BETWEEN 5.00 AND 10.00;
+SELECT * FROM lanche WHERE vl_lanche < 10.00;
+SELECT * FROM cliente WHERE nm_cliente LIKE "%a%" AND dt_nascimento > "2000-01-01";
+SELECT * FROM lanche WHERE ds_acompanhamento = "Batatas" AND ds_lanche LIKE "%frango%";
+SELECT * FROM lanche WHERE ds_lanche LIKE "%queijo%" AND vl_lanche BETWEEN 12.00 AND 16.00;
+SELECT * FROM bebida WHERE nm_bebida LIKE "S%" AND vl_bebida < 6.00;
+SELECT * FROM cliente WHERE nm_cliente LIKE "A%o";
+SELECT * FROM lanche WHERE nm_lanche LIKE "S%" AND ds_lanche LIKE "%frango%" AND vl_lanche > 12.00;
+SELECT * FROM bebida WHERE nm_bebida LIKE "%o%" AND vl_bebida BETWEEN 5.00 AND 10.00;
+SELECT * FROM lanche WHERE vl_lanche > 6.00 AND vl_lanche < 12.00 AND ds_lanche LIKE "%tomate%";
+SELECT * FROM bebida WHERE vl_bebida < 5.50;
+SELECT * FROM cliente ORDER BY nm_cliente;
+SELECT * FROM lanche WHERE ds_lanche LIKE "%queijo%" ORDER BY vl_lanche DESC;
+SELECT * FROM bebida WHERE vl_bebida > 6.50 ORDER BY nm_bebida;
+SELECT * FROM cliente WHERE nm_cliente LIKE "D%";
+SELECT * FROM lanche ORDER BY nm_lanche;
